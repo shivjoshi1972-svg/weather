@@ -1,0 +1,139 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+}
+
+/* --- Dynamic Backgrounds --- */
+.app {
+  background-image: url('https://images.unsplash.com/photo-1477468572316-36979019555e?auto=format&fit=crop&w=1600&q=80'); /* Cold/Default BG */
+  background-size: cover;
+  background-position: center;
+  transition: 0.4s ease-out;
+}
+
+.app.warm {
+  background-image: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1600&q=80'); /* Warm BG */
+}
+
+main {
+  min-height: 100vh;
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.6));
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* --- Search Bar --- */
+.search-box {
+  width: 100%;
+  max-width: 400px;
+  margin-bottom: 50px;
+}
+
+.search-box .search-bar {
+  display: block;
+  width: 100%;
+  padding: 15px;
+  appearance: none;
+  background: none;
+  border: none;
+  outline: none;
+  background-color: rgba(255, 255, 255, 0.85);
+  border-radius: 16px;
+  box-shadow: 0px 5px rgba(0, 0, 0, 0.2);
+  color: #313131;
+  font-size: 20px;
+  transition: 0.4s ease;
+}
+
+.search-box .search-bar:focus {
+  background-color: #fff;
+}
+
+/* --- Glassmorphism Weather Card --- */
+.weather-card {
+  background: rgba(255, 255, 255, 0.15); /* Transparent White */
+  backdrop-filter: blur(15px);            /* The "Glass" blur effect */
+  border-radius: 20px;
+  padding: 40px;
+  width: 100%;
+  max-width: 450px;
+  text-align: center;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  color: #fff;
+  animation: fadeIn 1s ease-in;
+}
+
+.location-box .location {
+  font-size: 32px;
+  font-weight: 700;
+  text-shadow: 2px 2px rgba(0, 0, 0, 0.3);
+}
+
+.location-box .date {
+  font-size: 18px;
+  font-weight: 300;
+  font-style: italic;
+  margin-bottom: 20px;
+}
+
+.weather-box .temp {
+  font-size: 80px;
+  font-weight: 900;
+  text-shadow: 3px 6px rgba(0, 0, 0, 0.3);
+  margin: 10px 0;
+}
+
+.weather-box .weather {
+  font-size: 32px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.details {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 30px;
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+  padding-top: 20px;
+}
+
+.detail-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.detail-item span:first-child {
+  font-size: 14px;
+  opacity: 0.8;
+}
+
+.detail-item span:last-child {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+/* --- Messages --- */
+.welcome-msg, .error-msg, .loading {
+  color: #FFF;
+  text-align: center;
+  font-size: 1.5rem;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.error-msg { color: #ff9e9e; }
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
